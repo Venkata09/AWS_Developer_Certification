@@ -95,7 +95,7 @@ Instances in a default subnet also receive both publie and private DNS hostnames
 
 ## EC-2
 
-#### Ec-2 Tagging
+#### EC-2 Tagging
 Tag as much as possible, tags as used to patrol the costs and to see where your costs are coming from. 
 
 Once you create the EC2 instance, you will be using the **public ip-address** to SSH to the machine. 
