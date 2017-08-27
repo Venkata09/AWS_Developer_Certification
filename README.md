@@ -93,8 +93,14 @@ All subnets are public and are associated with the main route table and sends th
 Instances launched into the default subset receive both a public IPV4 address and a private IPV4 address.
 Instances in a default subnet also receive both publie and private DNS hostnames
 
-# NACL - Network access control list
+## EC-2
 
+#### Ec-2 Tagging
+Tag as much as possible, tags as used to patrol the costs and to see where your costs are coming from. 
+
+Once you create the EC2 instance, you will be using the **public ip-address** to SSH to the machine. 
+
+# NACL - Network access control list
 
 
 # Fully managed SQL Databases - RDS
@@ -104,6 +110,19 @@ RDS uses EBS volues for database and log storage.
 
 # Route 53 & DNS
 
+# Security Group
+When creating the security groups, there are three options in the **Sources** section.
+1. Custom
+1. Anywhere
+1. My IP - You can actually restrict **SSH** down to your own individual IP address. IP/32
+
+![Scurity-groups](https://i2.wp.com/venkatad.files.wordpress.com/2017/08/security-group-ip-address.jpg?ssl=1&w=450)
+
+
+Create a Key-pair
+Public key - is a pad lock
+Private key - is the key that unlocks that pad lock. 
+You can use public key on multiple EC2 instances. You are putting a pad lock on all your virtual machines in the cloud. And with the PRIVATE key you can unlock those pad lock. 
 
 # AMI Amazon
 We can see these are snapshots of virtual machines that you can provision and boot up.
