@@ -105,3 +105,9 @@ RDS uses EBS volues for database and log storage.
 # Route 53 & DNS
 
 
+# AMI Amazon
+We can see these are snapshots of virtual machines that you can provision and boot up.
+There are two kinds of virtualization 
+    1) HVM - hardware virtual machine
+    2) PV - paravirtual
+
