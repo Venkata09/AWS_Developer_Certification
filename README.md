@@ -165,9 +165,9 @@ Now we will work on creating the new volumes and attaching to the EC2 instances.
 
 Create a snapshot. 
 Volumne types used 
-Standara -> Magnetic.
-gp2 -> General purpose 
-io1 -> Provisional 
+1. Standara -> Magnetic.
+1. gp2 -> General purpose 
+1. io1 -> Provisional 
 
 ```
 [root@ip-XXXXX /]# lsblk
