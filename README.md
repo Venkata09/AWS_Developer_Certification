@@ -161,7 +161,24 @@ You can use public key on multiple EC2 instances. You are putting a pad lock on 
 **Stateless** -> Outbound rules are not automatically added with the inbound rules, You need to manually add them. Ex: NACL
 
 # Upgrading the EBS volume types
-Now we will see if the 
+Now we will work on creating the new volumes and attaching to the EC2 instances. 
+
+Create a snapshot. 
+Volumne types used 
+Standara -> Magnetic.
+gp2 -> General purpose 
+io1 -> Provisional 
+
+```
+[root@ip-XXXXX /]# lsblk
+NAME    MAJ:MIN RM SIZE RO TYPE MOUNTPOINT
+xvda    202:0    0   8G  0 disk
+└─xvda1 202:1    0   8G  0 part /
+**xvdf**    202:80   0   8G  0 disk
+[root@ip-XXXXX /]# file -s /dev/xvdf
+**/dev/xvdf: Linux rev 1.0 ext4 filesystem data, UUID=0dd53590-f55f-45c4-8c81-74ef1fa5cead (extents) (large files) (huge files)**
+[root@ip-XXXXX /]#
+```
 
 # AMI Amazon
 We can see these are snapshots of virtual machines that you can provision and boot up.
