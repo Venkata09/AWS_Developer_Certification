@@ -88,17 +88,43 @@ NACL: Acts as a firewall at the subnode level. It controls both inbound & outbou
 Security Groups: Acts as a firewall at the Amazon EC2 instances, controlling both inbound & outbound traffic at the instance level.
 
 Default VPC:
-1 IGW is connected to your VPC.
-All subnets are public and are associated with the main route table and sends the internet traffic to the IGW.
-Instances launched into the default subset receive both a public IPV4 address and a private IPV4 address.
-Instances in a default subnet also receive both publie and private DNS hostnames
+1. 1 IGW is connected to your VPC.
+1. All subnets are public and are associated with the main route table and sends the internet traffic to the IGW.
+1. Instances launched into the default subset receive both a public IPV4 address and a private IPV4 address.
+1. Instances in a default subnet also receive both publie and private DNS hostnames
 
 ## EC-2
 
-#### EC-2 Tagging
+##### EC-2 Tagging
 Tag as much as possible, tags as used to patrol the costs and to see where your costs are coming from. 
+Once you are able to login, make userself a SUPER USER by issuing the following command. **sudo su**
 
+##### Create new EC-2 instance and host a simple HTML page.
 Once you create the EC2 instance, you will be using the **public ip-address** to SSH to the machine. 
+In windows:
+Putty: ec2-user@public-ip-address
+In Mac:
+**ec2-user@public-ip-address -i XXXX.pem** file
+add the PPK key in the AUTH section. 
+and you will be able to login to that machine. 
+
+Once you login, create a web-page **index.html** and start the webserver using the following command.
+**service httpd start**
+Following command is to make the APACHE started once the instance is started. 
+**chkconfig httpd on**
+Use the public DNS to see the webpage.
+
+
+##### Reserved EC-2 instance
+Reserved instances can be created using AWS. It's like you are setting your own server for your self.
+
+##### Storage encyrption with-in EC-2 instance
+When creating EC2 instances, you have an option for selecting **STORAGE**. 
+You cannot encyrpt root/default storage, 
+You can envrypt the other storage types.
+
+Exam-TIPS:
+
 
 # NACL - Network access control list
 
@@ -123,6 +149,19 @@ Create a Key-pair
 Public key - is a pad lock
 Private key - is the key that unlocks that pad lock. 
 You can use public key on multiple EC2 instances. You are putting a pad lock on all your virtual machines in the cloud. And with the PRIVATE key you can unlock those pad lock. 
+
+**Exam-tip**: 
+1. Any change in the security group or in the rules that are associated with the security group are applied immediately. 
+1. Security groups are **stateful** -> once you add the inbound rules the outbound rules are added automatically. Everything you allow in will go out automatically.
+1. We cannot deny the traffic, deny the IP addess with the security group. You can do it with the NACL.
+1. You can associate multiple security groups to one EC2 Instances.
+
+
+**Stateful** -> Outbound rules are added automatically with the inbound rules. Ex: Security Groups
+**Stateless** -> Outbound rules are not automatically added with the inbound rules, You need to manually add them. Ex: NACL
+
+# Upgrading the EBS volume types
+Now we will see if the 
 
 # AMI Amazon
 We can see these are snapshots of virtual machines that you can provision and boot up.
