@@ -186,3 +186,14 @@ There are two kinds of virtualization
     1) HVM - hardware virtual machine
     2) PV - paravirtual
 
+
+
+
+The below command will mount to the /efs location. If we need to mount to another location change it to the desired location.
+```
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-6fea8726.efs.us-east-1.amazonaws.com:/ efs
+```
+
+
+
+
