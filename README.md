@@ -183,8 +183,8 @@ xvda    202:0    0   8G  0 disk
 # AMI Amazon
 We can see these are snapshots of virtual machines that you can provision and boot up.
 There are two kinds of virtualization 
-    1) HVM - hardware virtual machine
-    2) PV - paravirtual
+    1. HVM - hardware virtual machine
+    1. PV - paravirtual
 
 
 
@@ -194,6 +194,40 @@ The below command will mount to the /efs location. If we need to mount to anothe
 sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-6fea8726.efs.us-east-1.amazonaws.com:/ efs
 ```
 
+
+# SQS -> Decouple your infrastructure. 
+SQS, is what they are looking for.
+
+Exam-Tips:
+1. SQS Delivery: SQS messages can be delivered multiple times in any order. 
+###### You might get a question when you want to process or prioritize the messages in the queue. If you want to process a set of messages faster than the other, you need to create two queues. Queue-A which will get higher priority by replication and queue-b will get lower priority. 
+1. Default visibility time out is 30 seconds. Maximum time out is 12 hours.
+
+###  SQS vs SNS is popular exam topic.
+
+## CLI Commands - for the developer exam.
+
+
+aws configure
+
+Describe the instances that you provisioned.
+
+describe-instances
+describe-images
+
+start-instance
+run-instances
+
+If you want to start a new instance. 
+**aws ec2 run-instances --image-id ami-XXXXX --count 1 --instance-type t2.micro --key-name KEYNAME --security-group-ids sg-XXXXX --subnet-id subnet-XXXXX**
+
+**aws ec2 terminate-instances --instance-ids i-XXXXXXXXXXXXX**
+
+
+**Exam Topic 
+SNS data format is : JSON
+Subscription will be cancelled with in 3 days.
+**
 
 
 
