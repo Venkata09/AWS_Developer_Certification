@@ -14,7 +14,7 @@ If the demon cannot create a connection to your application within the Connectio
 
 If the demon can create a connection, it waits for a response. If the Inactivity Timeout is exceeded before the demon receives a response, it aborts the request and sets the message's Visibility to the Error Visibility Timeout. The message will be retied after the Error Visibility Timeout.
 
-Note that your entire run does need to complete within the Inactivity Timeout (max 30 mins). Each time your application sends data the counter is reset. In other words you can hold the HTTP connection open for longer than 30 minutes by streaming data back in small increments. You could extend this up to the Visibility Timeout (max 12 hours). While SQS allows you to reset the visibility timeout, Elastic Beanstalk does provide the receipt handle to your code.
+Note that your entire run does need to complete within the Inactivity Timeout (max 30 mins). Each time your application sends data the counter is reset. ** In other words you can hold the HTTP connection open for longer than 30 minutes by streaming data back in small increments. You could extend this up to the Visibility Timeout (max 12 hours). While SQS allows you to reset the visibility timeout, Elastic Beanstalk does provide the receipt handle to your code.**
 
 At this point we have addressed all seven of the timeouts you can configure (2 on the queue and 5 in worker configuration), but we came this far so let's see this through to completion. If the demon receives a response from your application, it checks the return code. If the response indicates success (i.e. 200) it explicitly deletes the message from SQS and the process completes. If the response indicates failure, the demon sets the message's Visibility to the Error Visibility Timeout. The message will be retied after the Error Visibility Timeout.
 
@@ -22,4 +22,4 @@ At this point we have addressed all seven of the timeouts you can configure (2 o
 
 
 
-**Understand Amazon SQS visibility timeouts.** Visibility timeout is a period of time during which Amazon SQS prevents other components from receiving and processing a message because another component is already processing it. By default, the message visibility timeout is set to 30 seconds, and the maximum that it can be is 12 hours.
+**Understand Amazon SQS visibility timeouts.** Visibility timeout is a period of time during which Amazon SQS prevents other components from receiving and processing a message because another component is already processing it. ** By default, the message visibility timeout is set to 30 seconds, and the maximum that it can be is 12 hours.**
