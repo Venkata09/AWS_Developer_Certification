@@ -21,10 +21,6 @@ Amazon Web Services has a limited supply of public IPv4 addresses because the in
 There are only two ways to attach a public IP address to an EC2 instance in a VPC.
 
 1. Associate Public IP Address
-1. Elastic IP
-
-
-1. Associate Public IP Address
 
 You can request a public IP address when launching a new EC2 instance. This option appears as a checkbox in the console, as the --associate-public-ip-address flag when using aws-cli, and as the AssociatePublicIpAddress flag on an embedded network interface object when using CloudFormation. In any case, the public IP address is assigned to eth0 (DeviceIndex=0). You can only use this approach when launching a new instance. However, this comes with some drawbacks.
 
