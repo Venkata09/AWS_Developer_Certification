@@ -36,3 +36,21 @@ In general Elastic IP's are the preferred approach because they are safer. You a
 
 In conclusion, using public IP addresses does come with some nice benefits, but you'll run into administrative or scaling problems if you try to use public IP addresses exclusively. Hopefully this helps to illustrate and explain why the best practices are the way they are.
 
+
+
+
+
+
+It is worth noting that the AWS managed gateway is ~3 times more expensive as on date when compared to running your own instance. 
+
+Managed NAT instance monthly cost = $33.48/month ($0.045/hour * 744 hours in a month) + $4.50 ($0.045 per GB data processed * 100GB) + $10 ($.10/GB standard AWS data transfer charges for all data transferred via the NAT gateway) = $47.98
+
+t2.nano instance configured as a NAT instance = $4.84/month ($0.0065 * 744 hours in a month) + $10 ($.10/GB standard AWS data transfer charges for all data transferred via the NAT instance) = $14.84
+
+
+
+
+
+
+
+
