@@ -24,5 +24,19 @@ There are only two ways to attach a public IP address to an EC2 instance in a VP
 1. Elastic IP
 
 
+1. Associate Public IP Address
 
+You can request a public IP address when launching a new EC2 instance. This option appears as a checkbox in the console, as the --associate-public-ip-address flag when using aws-cli, and as the AssociatePublicIpAddress flag on an embedded network interface object when using CloudFormation. In any case, the public IP address is assigned to eth0 (DeviceIndex=0). You can only use this approach when launching a new instance. However, this comes with some drawbacks.
+
+One of the advantages of using EC2 instances in a VPC is that you can change the assigned security groups on the fly. But if you have opted to associate a public IP address, you lose that ability. It's actually even worse than that. If you're using CloudFormation and you change the security group of an instance that is using an embedded network interface object, that forces immediate replacement of the instance.
+
+Another disadvantage is that a public IP address assigned in this way will be lost when the instance is stopped.
+
+2. Elastic IP
+
+In general Elastic IP's are the preferred approach because they are safer. You are guaranteed to continue using the same IP address, you don't risk accidentally deleting any EC2 instances, you can freely attach/detach an Elastic IP at any time, and you have the freedom to change security groups applied to your EC2 instances.
+
+... But AWS limits you to 5 EIP's per region. You can request more, and your request might be granted. But AWS could just as likely deny that request based on the reasoning I mentioned above. So you probably don't want to rely on EIP's if you plan on ever scaling your infrastructure beyond 5 EC2 instances per region.
+
+In conclusion, using public IP addresses does come with some nice benefits, but you'll run into administrative or scaling problems if you try to use public IP addresses exclusively. Hopefully this helps to illustrate and explain why the best practices are the way they are.
 
