@@ -229,5 +229,13 @@ SNS data format is : JSON
 Subscription will be cancelled with in 3 days.
 **
 
+## ELB
+
+ELB has the Cross-Zone 
+1. By default, the load balancer distributes incoming requests evenly across its enabled Availability Zones for 
+e.g. If **AZ-a** has 5 instances and **AZ-b** has 2 instances, the load will still be distributed 50% across each of the AZs
+Enabling **Cross-Zone load balancing** allows the ELB to distribute incoming requests evenly across all the back-end instances, regardless of the AZ
+1. It is still recommended to maintain approximately equivalent numbers of instances in each Availability Zone for higher fault tolerance.
+
 
 
