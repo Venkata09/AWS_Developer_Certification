@@ -59,7 +59,23 @@ High Availability: Creating your architecture in such a way that your “system�
 
 Fault Tolerant: The ability of your “system” to withstand failures in one (or more) of its components and still remain available.
 
+ Q: What is the proper structure of AWS Global Infrastructure?
+A: Regions -> Availability Zones -> Data Centers -> AWS Services
 
+T: A VPC is your private, logically isolated section of AWS.
+
+T: Route Tables are what direct the flow of traffic between resources within a VPC.
+
+Q: Availability Zones allow for this type of cloud architecture?
+A: Highly available and fault tolerant architecture.
+
+T: An Internet Gateway MUST be attached to a VPC for AWS resources, such as an EC2 instance, to have access to the Internet.
+
+Q: What is the security layer that allows/denies data from entering or exiting a subnet?
+A: Network Access Control List (NACL)
+
+Q: VPC is an abbreviation for:
+A: Virtual Private Cloud
 
 
 
