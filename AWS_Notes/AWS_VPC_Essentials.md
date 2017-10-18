@@ -77,6 +77,61 @@ A: Network Access Control List (NACL)
 Q: VPC is an abbreviation for:
 A: Virtual Private Cloud
 
+ VPC Essentials
+
+CDN = Content Delivery Network
+
+VPC Network Routing Basics
+
+A PUBLIC subnet HAS a route to the Internet (it is associated with a route table that has an IGW attached)
+A PRIVATE subnet does NOT have a route to the Internet (it is associated with a route table that does NOT have an IGW attached)
+
+VPC Security Basics
+
+NACLs: Best practice to increment numbers by 10, so if you have to place a rule in a certain order, it does not create an issue.
+
+Security groups: Are security for the instance level. They support only ‘allow’ rules. Best practice is to allow ONLY traffic that is required.
+
+VPC Basics Quiz
+
+T: For a subnet to be considered public, it must have a route to the Internet. Having a route to the Internet means that it must be associated with a route table that points to the IGW.
+
+Q: You have been tasked with auditing the security of your VPC. As part of this process, you need to start by analysing what traffic is allowed to and from various EC2 instances. What two parts of the VPC do you need to check to accomplish this task?
+A: Security Groups and NACLs
+E: Security Groups and NACLs are the two parts of the VPC Security Layers. Security Groups are a firewall on the instance level, and NACLs are a firewall on the subnet level.
+
+Q: What best describes how NACLs rules work?
+A: Rules are evaluated by rule number, from lowest to highest, and executed immediately when a matching allow/deny rule is found.
+
+T: A VPC can only have one IGW attached at a time.
+
+Q: If data is travelling from a customer, over the open Internet, to a web site you are hosting on an EC2 instance in an AWS VPC, what is the order of components that data will travel through?
+A: IGW -> Route Table -> NACL -> Subnet -> Security Group -> EC2 Instance
+
+Q: You work for a financial institution that is preparing to (possibly) migrate their on-premise infrastructure to AWS. As part of this process, you have been tasked with preparing the cloud strategy that will be presented to your CTO. As part of this presentation, you need to highlight several of the top benefits of using an AWS VPC. Which of the following benefits do you highlight in this section of the presentation?
+A: The ability to have both public and private subnets
+A: The ability to extend your on-premise network to the cloud via VPN
+A: The ability to provide a DNS server for your VPC
+
+Q: Your company’s management team has been considering moving their on-premise network to AWS. You have been called into a meeting to brief the management team on some specifics of AWS. One of the first questions you are asked is what exactly a VPC is. How should you respond?
+A: An AWS VPC closely resembles a traditional on-premise network, with the added benefit of AWS infrastructure.
+
+T: NACLs are stateless, and security groups are stateful.
+E: NACLs are stateless, which means that return request traffic must have an allow rule set up for that return traffic to enter or leave the subnet. Security groups are stateful, which means that return request traffic does not need an allow rule set up for that return traffic to enter or leave the security group.
+
+Q: You are the lead Solutions Architect for a healthcare company and are managing an application running on multiple EC2 instances. Those EC2 instances must have the ability to access other AWS resources. What is the best way to manage this access?
+A: Use an IAM role to manage temporary credentials for applications that run on an EC2 instance. The role will supply temporary permissions that applications can use when they make calls to other AWS resources.
+
+T: All subnets, regardless of being public or private, can communicate with each other inside of a VPC.
+E: Since each route table has a local target with the destination of the VPCs CIDR block range, all subnets within a VPC can communicate with each other.
+
+T: In the default VPC, all subnets have a route to the Internet.
+
+
+
+
+
+
 
 
 
