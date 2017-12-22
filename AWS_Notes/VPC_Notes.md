@@ -13,7 +13,7 @@
 1. instances without Elastic IP address can access internet in two ways
 1. via a NAT instance. they can use EIP of nat instance. Nat allows outbound connections, but does not allow internet to initiate connection to these machines
 1. for vpc with hardware vpn, via virtual private gateway to existing data center
-1. components of VPC
+### Components of VPC
 1. VPC
 1. subnet
 1. internet gateway
@@ -22,13 +22,13 @@
 1. virtual private gateway : amazon side of a vpn connection
 1. customer gateway : customer side of vpn connection
 1. router to interconnect subnets and direct traffic between internet gateway , virtual private gateway, nat and subnets
-1. Benefits of VPC
+### Benefits of VPC
 1. Ability to launch instances into a subnet (range of ip)
 1. Ability to define custom ip address ranges inside each subnet
 1. Ability to configure route tables between subnets
 1. ability to configure internet gateways and attach them to subnets
 1. create layered network of resources
-1. VPC limits
+### VPC limits
 1. 5 VPC per region, more on request
 1. 5 internet gateways per account, equal to VPC limit
 1. 5 virtual private gateways and 5 customer gateways
@@ -42,6 +42,7 @@
 1. 100 security groups
 1. 50 rules per security group
 1. VPC via public subnet is accessible over internet. VPC via private subnet is not accessible over internet, atleast not without NAT (network address translation)
+
 1. CIDR: Classless Inter Domain routing: specifies what your continuous IP address range is
 1. You cannot create a VPC larger than /16
 1. Tenancy: Default vs dedicated. Default is shared with others, dedicated means hardware is dediacated for you. the underlying hypervisor is dedicated in dedicated tenancy
@@ -50,7 +51,7 @@
 1. A route table is automatically provisioned when you create a VPC
 1. You can create a route table, and assign it to a subnet
 1. Each subnet can be associated with only 1 route table
-1. Internet Gateway
+### Internet Gateway
 1. a gateway out to internet.
 1. You can only have 1 internet gateway per VPC
 1. Internet gateway needs to be attached to a subnet
