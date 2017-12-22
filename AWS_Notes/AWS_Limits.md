@@ -19,6 +19,21 @@
 1. BGP advertised routes per VPN Connection: 100
 
 
+### VPC limits
+1. 5 VPC per region, more on request
+1. 5 internet gateways per account, equal to VPC limit
+1. 5 virtual private gateways and 5 customer gateways
+1. 1 internet gateway attached to a subnet at a time
+1. 1 subnet can only be in 1 availability zone
+1. 50 customer gateways per region
+1. 50 VPN connections per region
+1. 200 route tables per region
+1. 200 subnets per amazon vpc
+1. 5 elastic IP addresses
+1. 100 security groups
+1. 50 rules per security group
+
+
 ### SQS Related Timeout limits.
 
 1. Messages in the Queue can be retained for up to 14 days
