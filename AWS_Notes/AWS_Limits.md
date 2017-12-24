@@ -42,3 +42,10 @@
 1. SQS - Message can contain upto 256KB of text, billed at 64KB chunks,
 1. Single request can have 1 to 10 messages unto maximum of 256KB payload
 1. Even though there is one message of 256Kb its basically 4 request for billing since (4 * 64KB)
+
+### CloudWatch
+1. 1 minute data point are available for 15 days.
+1. 5 minute data points are available for 63 days.
+1. 1 hour data points are available for 455 days.
+
+
