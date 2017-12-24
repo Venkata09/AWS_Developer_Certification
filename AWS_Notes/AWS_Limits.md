@@ -36,7 +36,7 @@
 
 ### SQS Related Timeout limits.
 
-1. Messages in the Queue can be retained for up to 14 days
+1. Messages in the Queue can be **retained** for up to 14 days. (How long can I keep my messages in Amazon SQS message queues) --> 1 minute to 14 days. By default it's 4 days.
 1. Visibility timeout by default is 30 Seconds up to 12 hour maximum 
 1. Maximum long polling timeout 20 seconds
 1. SQS - Message can contain upto 256KB of text, billed at 64KB chunks,
