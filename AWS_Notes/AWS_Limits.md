@@ -48,4 +48,5 @@
 1. 5 minute data points are available for 63 days.
 1. 1 hour data points are available for 455 days.
 
-
+### RDS
+1. How many reserved instances can I purchase? You can purchase up to **40 reserved DB instances**.
