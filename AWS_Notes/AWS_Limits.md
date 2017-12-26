@@ -50,3 +50,16 @@
 
 ### RDS
 1. How many reserved instances can I purchase? You can purchase up to **40 reserved DB instances**.
+
+### CloudFormation
+1. 200 Stacks per account.
+1. There is no limit on the number of templates that you can create.
+1. Template, Parameter, Output, and Resource description fields are limited to 4096 characters.
+1. You can include up to 60 parameters and 60 outputs in a template.
+
+
+### S3 
+1. 100 Buckets per account.
+
+
+
