@@ -57,9 +57,30 @@
 1. Template, Parameter, Output, and Resource description fields are limited to 4096 characters.
 1. You can include up to 60 parameters and 60 outputs in a template.
 
+### Cloudwatch
+1. 2 weeks : 
+1. 15 Months : 
 
 ### S3 
 1. 100 Buckets per account.
 
+### IAM
+1. 
+Q) How many policies can be added. 
+For inline policies: **You can add as many inline policies as you want to a user, role, or group,** but the total aggregate policy size (the sum size of all inline policies) per entity cannot exceed the following limits:
 
+User policy size cannot exceed **2,048** characters.
+Role policy size cannot exceed **10,240** characters.
+Group policy size cannot exceed **5,120** characters.
+
+For managed policies: You can add up to 10 managed policies to a user, role, or group. The size of each managed policy cannot exceed **6,144** characters.
+1. You are limited to 1,000 IAM roles under your AWS account.
+
+
+
+
+
+## Other important aspects of the AWS.
+
+IAM policy --> 
 
