@@ -1,6 +1,7 @@
 ### AWS services and the limits for the 
 
 1. VPCs per region: 5
+1. 5 VPC per region, more on request
 1. Subnets per VPC: 200
 1. Route tables per VPC: 200 (including main route table)
 1. Network ACLs per VPC: 200
@@ -11,16 +12,15 @@
 1. Customer Gateway (CGW) per region: 50
 1. VPN connections per region: 50
 1. Entries per route table: 50
-1. EIP per region for each account: 5
+1. Elastic-IP (EIP) per region for each account: 5
 1. Security groups per VPC: 100
-1. Rules per security group: 50 (per network interface max limit: 250)
 1. Security groups per network interface: 5
+1. Rules per security group: 50 (per network interface max limit: 250)
 1. Rules per ACL: 20
 1. BGP advertised routes per VPN Connection: 100
 
 
 ### VPC limits
-1. 5 VPC per region, more on request
 1. 5 internet gateways per account, equal to VPC limit
 1. 5 virtual private gateways and 5 customer gateways
 1. 1 internet gateway attached to a subnet at a time
@@ -32,11 +32,13 @@
 1. 5 elastic IP addresses
 1. 100 security groups
 1. 50 rules per security group
+1. Under AWS you will have 251 IP addresses, opposed to industry standard 254. And these 4 IP's are reserved for AWS. 
 
 
 ### SQS Related Timeout limits.
 
 1. Messages in the Queue can be **retained** for up to 14 days. (How long can I keep my messages in Amazon SQS message queues) --> 1 minute to 14 days. By default it's 4 days.
+  1. 1 --> 4 --> 14
 1. Visibility timeout by default is 30 Seconds up to 12 hour maximum 
 1. Maximum long polling timeout 20 seconds
 1. SQS - Message can contain upto 256KB of text, billed at 64KB chunks,
